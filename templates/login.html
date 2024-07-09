@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block message %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    <p>{{ messages[0][1] }}</p>
+{% endif %}
+{% endwith %}
+{% endblock message %}
+
+{% block contents %}
+    <form action="{{ url_for('login_done') }}" method="post">
+        <p>userID: </p>
+        <input type="text" name="id" id="id" required>
+        <p>password: </p>
+        <input type="password" name="pwd" id="pwd" required>
+        <button type="submit">로그인</button>
+    </form>
+    <p>아직 회원이 아니신가요? <a href="{{ url_for('signin') }}">회원가입하기</a></p>
+{% endblock contents %}
