@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+pandas
+scikit-learn
+torch
+accelerate
+kobert-transformers==0.4.1
+transformers==3.0.2
+tokenizers==0.8.1rc1
